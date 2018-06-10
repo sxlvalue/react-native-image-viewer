@@ -46,6 +46,7 @@ export default class ImageViewer extends React.Component<Props, State> {
   private handleLongPressWithIndex = new Map<number, any>();
 
   public componentWillMount() {
+    console.log('load image viewer');
     this.init(this.props);
   }
 
