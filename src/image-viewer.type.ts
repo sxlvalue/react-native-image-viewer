@@ -163,6 +163,9 @@ export class Props {
   public loadingRender?: () => React.ReactElement<any> = () => {
     return null as any;
   };
+  public onLoadImage?: (index?:number) => React.ReactElement<any> = () => {
+    return null as any;
+  };
 
   /**
    * 保存到相册的回调

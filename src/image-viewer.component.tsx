@@ -156,11 +156,11 @@ export default class ImageViewer extends React.Component<Props, State> {
     }
 
     // 如果已经有宽高了，直接设置为 success
-    if (this!.state!.imageSizes![index].width > 0 && this!.state!.imageSizes![index].height > 0) {
-      imageStatus.status = 'success';
-      saveImageSize();
-      return;
-    }
+    // if (this!.state!.imageSizes![index].width > 0 && this!.state!.imageSizes![index].height > 0) {
+    //   imageStatus.status = 'success';
+    //   saveImageSize();
+    //   return;
+    // }
 
     // 是否加载完毕了图片大小
     const sizeLoaded = false;
@@ -464,7 +464,10 @@ export default class ImageViewer extends React.Component<Props, State> {
               imageWidth={screenWidth}
               imageHeight={screenHeight}
             >
-              <View style={this.styles.loadingContainer}>{this!.props!.loadingRender!()}</View>
+              <View style={this.styles.loadingContainer}>
+                {/*{this!.props!.loadingRender!()}*/}
+                {this!.props!.onLoadImage!(index)}
+                </View>
             </Wrapper>
           );
         case 'success':
